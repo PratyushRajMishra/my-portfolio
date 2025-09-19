@@ -1,55 +1,53 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const variants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0 },
-};
-
 function HeroSection() {
+  const textVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+  };
+
+  const containerVariants = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.3 } },
+  };
+
   return (
-    <section className="flex flex-col items-center justify-center h-[90vh] text-center bg-gradient-to-b from-indigo-100 to-white dark:from-gray-900 dark:to-gray-800 px-6">
-      <motion.h1
-        initial="hidden"
-        animate="visible"
-        variants={variants}
-        transition={{ duration: 0.9 }}
-        className="text-5xl md:text-6xl font-extrabold text-indigo-700 dark:text-orange-400"
-      >
-        Welcome to My <br />
-        <span className="bg-gradient-to-r from-indigo-500 to-purple-600 dark:from-orange-400 dark:to-pink-500 bg-clip-text text-transparent">
-          3D Animated Portfolio
-        </span>
-      </motion.h1>
-      <motion.p
-        initial="hidden"
-        animate="visible"
-        variants={variants}
-        transition={{ delay: 0.3, duration: 0.6 }}
-        className="mt-6 text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-xl"
-      >
-        Building interactive web experiences with{" "}
-        <span className="font-semibold">React, Tailwind, Framer Motion, and Three.js</span>.
-      </motion.p>
+    <section
+      className="relative w-full h-screen bg-gray-800 flex flex-col items-center justify-center text-center overflow-hidden"
+    >
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-center bg-cover grayscale"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1611702817692-ee0591608901?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+        }}
+      ></div>
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/40"></div>
+
+      {/* Hero Content */}
       <motion.div
+        className="relative z-10 flex flex-col items-center justify-center space-y-4 px-4"
+        variants={containerVariants}
         initial="hidden"
         animate="visible"
-        variants={variants}
-        transition={{ delay: 0.6, duration: 0.6 }}
-        className="mt-8 flex gap-4"
       >
-        <a
-          href="#projects"
-          className="px-6 py-3 rounded-lg bg-indigo-600 text-white font-semibold shadow hover:bg-indigo-700 transition"
+        <motion.h1
+          className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white"
+          variants={textVariants}
         >
-          View Projects
-        </a>
-        <a
-          href="#contact"
-          className="px-6 py-3 rounded-lg border border-indigo-600 text-indigo-600 dark:border-orange-400 dark:text-orange-400 font-semibold hover:bg-indigo-50 dark:hover:bg-gray-800 transition"
+          Hello, I'm{" "}
+          <span className="text-indigo-500">Pratyush Mishra</span>
+        </motion.h1>
+        <motion.p
+          className="text-sm sm:text-base text-gray-300 tracking-widest"
+          variants={textVariants}
         >
-          Contact Me
-        </a>
+          @FLUTTER DEVELOPER
+        </motion.p>
       </motion.div>
     </section>
   );
