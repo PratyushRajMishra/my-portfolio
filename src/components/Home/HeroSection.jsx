@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import heroBg from "../../assets/hero-bg.png"; // 👈 Import your local image
 
 function HeroSection() {
   const textVariants = {
@@ -14,40 +15,72 @@ function HeroSection() {
 
   return (
     <section
-      className="relative w-full h-screen bg-gray-800 flex flex-col items-center justify-center text-center overflow-hidden"
+      className="relative w-full h-screen flex flex-col items-center justify-center text-center overflow-hidden"
     >
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-center bg-cover grayscale"
+        className="absolute inset-0 bg-top bg-cover grayscale"
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1611702817692-ee0591608901?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+          backgroundImage: `url(${heroBg})`,
         }}
       ></div>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/40"></div>
+      <div className="absolute inset-0 bg-black/60"></div>
 
       {/* Hero Content */}
       <motion.div
-        className="relative z-10 flex flex-col items-center justify-center space-y-4 px-4"
+        className="relative z-10 flex flex-col items-center justify-center space-y-6 px-6"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
+    
+        {/* Name */}
         <motion.h1
-          className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white"
+          className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 drop-shadow-lg"
           variants={textVariants}
         >
-          Hello, I'm{" "}
-          <span className="text-indigo-500">Pratyush Mishra</span>
+          Hi, I’m Pratyush Mishra
         </motion.h1>
-        <motion.p
+
+        {/* Role */}
+        <motion.h2
           className="text-sm sm:text-base text-gray-300 tracking-widest"
           variants={textVariants}
         >
-          @FLUTTER DEVELOPER
+          @ Flutter Developer | @ Mobile App Enthusiast
+        </motion.h2>
+
+        {/* Professional Subtitle */}
+        <motion.p
+          className="text-sm sm:text-base md:text-lg text-gray-300 max-w-2xl leading-relaxed"
+          variants={textVariants}
+        >
+          I build <span className="font-semibold text-indigo-400">modern, scalable, and user-friendly</span>{" "}
+          mobile applications. With expertise in <span className="font-semibold text-purple-400">Flutter</span>, 
+          I craft apps that balance <span className="italic">beautiful design</span> and{" "}
+          <span className="italic">robust performance</span>.
         </motion.p>
+
+        {/* Call-to-action buttons */}
+        <motion.div
+          className="flex space-x-4 mt-6"
+          variants={textVariants}
+        >
+          <a
+            href="#projects"
+            className="px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-medium rounded-xl shadow-md hover:scale-105 hover:shadow-lg transition-transform"
+          >
+            View My Work
+          </a>
+          <a
+            href="#contact"
+            className="px-6 py-3 border border-indigo-400 text-indigo-300 font-medium rounded-xl hover:bg-indigo-500/20 transition"
+          >
+            Contact Me
+          </a>
+        </motion.div>
       </motion.div>
     </section>
   );
