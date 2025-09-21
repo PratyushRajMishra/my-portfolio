@@ -8,7 +8,6 @@ function IPhone3D() {
   const [hovered, setHovered] = useState(false);
   const rotationRef = useRef({ x: 0, y: 0 });
   const cursorRef = useRef({ x: 0, y: 0 });
-  const shadowRef = useRef(null);
 
   useEffect(() => {
     let animationFrame;
@@ -22,13 +21,6 @@ function IPhone3D() {
         rotateY,
         transition: { duration: 0.1, ease: "linear" },
       });
-
-      if (shadowRef.current) {
-        const offsetX = rotateY / 5;
-        const offsetY = rotateX / 5;
-        const scale = 1 + Math.abs(rotateX) / 80;
-        shadowRef.current.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(${scale})`;
-      }
 
       animationFrame = requestAnimationFrame(animate);
     };
@@ -50,18 +42,10 @@ function IPhone3D() {
     cursorRef.current = { x: 0, y: 0 };
     rotationRef.current = { x: 0, y: 0 };
     controls.start({ rotateX: 0, rotateY: 0, transition: { type: "spring", stiffness: 80, damping: 20 } });
-    if (shadowRef.current) shadowRef.current.style.transform = "translate(-50%, -50%) scale(1)";
   };
 
   return (
     <div className="relative w-[90vw] max-w-[350px] aspect-[1/2] mx-auto sm:max-w-[320px]">
-      {/* Shadow */}
-      <div
-        ref={shadowRef}
-        className="absolute inset-0 bg-black opacity-20 rounded-[3rem] filter blur-3xl pointer-events-none"
-        style={{ transform: "translate(-50%, -50%) scale(1)", top: "50%", left: "50%" }}
-      />
-
       <motion.div
         className="relative w-full h-full [transform-style:preserve-3d] cursor-pointer"
         style={{ perspective: 1500 }}
