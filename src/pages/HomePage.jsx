@@ -2,7 +2,9 @@ import React from "react";
 import Navbar from "../components/Common/Navbar";
 import HeroSection from "../components/Home/HeroSection";
 import AboutSection from "../components/Home/AboutSection";
+import WhatIKnow from "../components/Home/WhatIKnow";
 import Footer from "../components/Common/Footer";
+import { Import } from "lucide-react";
 
 function HomePage() {
   return (
@@ -11,6 +13,7 @@ function HomePage() {
       <main>
         <HeroSection />
         <AboutSection />
+        <WhatIKnow />
       </main>
       <Footer />
     </div>
