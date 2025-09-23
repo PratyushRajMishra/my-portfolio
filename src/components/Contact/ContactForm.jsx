@@ -18,7 +18,7 @@ function ContactForm() {
       <input name="name" value={form.name} onChange={handleChange} placeholder="Name" className="w-full p-2 mb-2 rounded border dark:bg-gray-900" />
       <input name="email" type="email" value={form.email} onChange={handleChange} placeholder="Email" className="w-full p-2 mb-2 rounded border dark:bg-gray-900" />
       <textarea name="message" value={form.message} onChange={handleChange} placeholder="Message" className="w-full p-2 mb-2 rounded border dark:bg-gray-900" />
-      <button type="submit" className="w-full bg-indigo-700 dark:bg-orange-400 text-white p-2 rounded">Send</button>
+      <button type="submit" className="w-full bg-indigo-700 dark:bg-orange-400 text-white p-2 rounded">Send Email</button>
     </form>
   );
 }
