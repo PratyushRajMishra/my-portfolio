@@ -4,6 +4,7 @@ import HeroSection from "../components/Home/HeroSection";
 import AboutSection from "../components/Home/AboutSection";
 import WhatIKnow from "../components/Home/WhatIKnow";
 import Footer from "../components/Common/Footer";
+import EducationList from "../components/Education/EducationList";
 import { Import } from "lucide-react";
 
 function HomePage() {
@@ -14,6 +15,7 @@ function HomePage() {
         <HeroSection />
         <AboutSection />
         <WhatIKnow />
+        <EducationList />
       </main>
       <Footer />
     </div>
