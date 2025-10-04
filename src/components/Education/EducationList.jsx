@@ -41,7 +41,7 @@ function EducationList() {
       <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-center mb-16 sm:mb-24">
         <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 
           bg-clip-text text-transparent">
-          My Education
+            Education
         </span>
       </h2>
 

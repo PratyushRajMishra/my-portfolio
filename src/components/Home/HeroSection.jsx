@@ -49,7 +49,7 @@ function HeroSection() {
           className="text-sm sm:text-base text-gray-300 tracking-widest"
           variants={textVariants}
         >
-          @ Flutter Developer | @ Mobile App Enthusiast
+          Flutter Developer | Mobile App Enthusiast
         </motion.h2>
 
         {/* Professional Subtitle */}

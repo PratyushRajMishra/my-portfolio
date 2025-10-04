@@ -5,12 +5,15 @@ const EDUCATION = [
     degree: "DOEACC B-LEVEL (IT) — Equivalent to MCA",
     year: "Aug 2023 - Present",
     details:
-      "Prestigious certification program (NSQF Level-7). Provides in-depth knowledge in IT and Computer Science.",
+      "Prestigious NSQF Level-7 certification providing advanced knowledge in IT and Computer Science. Focus on software architecture, cloud computing, and modern web technologies.",
     skills: [
       "Software Development",
       "Web Applications",
       "Java",
       "Database Administration",
+      "Cloud Computing",
+      "Agile Methodologies",
+      "Team Collaboration",
     ],
   },
   {
@@ -18,7 +21,7 @@ const EDUCATION = [
     degree: "DOEACC A-LEVEL (IT) — Equivalent to Advanced Diploma in Computer Applications",
     year: "Jan 2022 - Aug 2023",
     details:
-      "Comprehensive program (NSQF Level-6) covering programming, data structures, web development, and software engineering.",
+      "Comprehensive NSQF Level-6 program covering programming, data structures, web development, and software engineering principles. Engaged in industry-standard projects and assessments.",
     skills: [
       "Core Java",
       "Web Design",
@@ -31,6 +34,8 @@ const EDUCATION = [
       "MongoDB",
       "Java Swing",
       "Web Development",
+      "Problem Solving",
+      "Version Control (Git)",
     ],
   },
   {
@@ -38,30 +43,32 @@ const EDUCATION = [
     degree: "DOEACC O-LEVEL (IT) — Equivalent to Diploma in Computer Science",
     year: "Jan 2020 - Jan 2021",
     details:
-      "Foundation-level program (NSQF Level-5) in Computer Science and IT.",
-    skills: ["Web Design", "Python", "C", "MySQL", "Linux", "Web Development"],
+      "Foundation-level NSQF Level-5 program introducing core concepts of Computer Science and Information Technology with practical applications.",
+    skills: ["Web Design", "Python", "C", "MySQL", "Linux", "Web Development", "Networking Basics"],
   },
   {
     school: "Siddharth University, Siddharth Nagar",
     degree: "Bachelor of Science (B.Sc) in Mathematics",
     year: "Jul 2019 - May 2022",
     details:
-      "Undergraduate program with strong foundation in mathematics and sciences.",
-    skills: ["Mathematics", "Physics"],
+      "Undergraduate program with rigorous coursework in mathematics, statistics, and analytical problem solving. Participated in national-level math competitions and workshops.",
+    skills: ["Mathematics", "Physics", "Statistics", "Analytical Thinking", "Problem Solving"],
   },
   {
     school: "Central Academy",
     degree: "12th Grade (PCM)",
     year: "Apr 2018 - May 2019",
     details:
-      "Completed Higher Secondary Education with Physics, Chemistry, and Mathematics.",
-    skills: ["Physics", "Mathematics"],
+      "Completed Higher Secondary Education with a focus on Physics, Chemistry, and Mathematics. Awarded top scorer in Mathematics Olympiad at state level.",
+    skills: ["Physics", "Mathematics", "Analytical Reasoning", "Laboratory Skills"],
   },
   {
     school: "Central Academy",
     degree: "10th Grade",
     year: "Apr 2015 - May 2016",
-    details: "Completed Secondary School Education (CGPA: 8.2).",
+    details:
+      "Completed Secondary School Education with distinction. Recognized for academic excellence and leadership in school clubs.",
+    skills: ["Teamwork", "Time Management", "Problem Solving"],
   },
 ];
 

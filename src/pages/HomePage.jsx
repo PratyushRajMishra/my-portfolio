@@ -6,6 +6,7 @@ import WhatIKnow from "../components/Home/WhatIKnow";
 import Footer from "../components/Common/Footer";
 import EducationList from "../components/Education/EducationList";
 import { Import } from "lucide-react";
+import CertificationsList from "../components/Education/certificationList";
 
 function HomePage() {
   return (

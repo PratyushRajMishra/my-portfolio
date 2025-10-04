@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../components/Common/Navbar";
 import Footer from "../components/Common/Footer";
 import EducationList from "../components/Education/EducationList";
+import CertificationsList from "../components/Education/certificationList";
 
 function Education() {
   return (
@@ -9,6 +10,7 @@ function Education() {
       <Navbar />
       <main>
         <EducationList />
+        <CertificationsList />
       </main>
       <Footer />
     </div>

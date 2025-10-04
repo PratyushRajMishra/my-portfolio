@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
@@ -13,26 +13,45 @@ const navItems = [
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
+  const location = useLocation();
   const isHome = location.pathname === "/";
 
-  const linkClasses = isHome
-    ? "text-white"
-    : "text-gray-800 dark:text-white";
+  const linkClasses = isHome ? "text-white" : "text-gray-800 dark:text-white";
+
+  // handle scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY) {
+        // scrolling down → hide navbar
+        setShowNavbar(false);
+      } else {
+        // scrolling up → show navbar
+        setShowNavbar(true);
+      }
+      setLastScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   return (
     <nav
       className={`fixed top-0 z-50 w-full px-6 py-4 flex justify-center transition-all duration-300 
-        ${isHome 
-          ? "bg-transparent" 
+        ${isHome
+          ? "bg-transparent"
           : "bg-white/70 dark:bg-gray-900/70 backdrop-blur-md shadow-md relative"
         }
+        ${showNavbar ? "translate-y-0" : "-translate-y-full"}
       `}
     >
       {/* Gradient shadow only for non-home pages */}
       {!isHome && (
-        <div className="absolute inset-x-0 -bottom-2 h-[3px] 
+        <div
+          className="absolute inset-x-0 -bottom-2 h-[3px] 
           bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 
           opacity-60 blur-sm pointer-events-none"
         />
@@ -52,7 +71,6 @@ function Navbar() {
                   }`}
                 >
                   {item.label}
-                  {/* Active & hover underline */}
                   <span
                     className={`absolute -bottom-1 left-0 h-[2px] w-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 transition-all duration-300 ${
                       isActive ? "w-full" : "group-hover:w-full"
@@ -83,9 +101,10 @@ function Navbar() {
         <div className="sm:hidden absolute top-16 left-0 w-full px-4 animate-fade-in-down">
           <ul
             className={`flex flex-col gap-4 uppercase text-center rounded-xl p-6 shadow-lg 
-              ${isHome
-                ? "text-white bg-black/80 backdrop-blur"
-                : "text-gray-800 dark:text-white bg-white/90 dark:bg-gray-900/90"
+              ${
+                isHome
+                  ? "text-white bg-black/80 backdrop-blur"
+                  : "text-gray-800 dark:text-white bg-white/90 dark:bg-gray-900/90"
               }`}
           >
             {navItems.map((item) => {
